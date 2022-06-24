@@ -1,0 +1,6 @@
+/* this wont work because searchmatch isnt explicitly specified in the page-list template */
+/* instead this needs to go in the global css file */
+
+/* .searchmatch {
+    font-weight: bold;
+} */

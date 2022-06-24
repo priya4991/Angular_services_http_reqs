@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
+Concept of DEPENDENCY INJECTION used in this project for the service and example class Car. NEED HELP IN UNDERSTANDING DEPENDENCY INJECTION.
+
+Also concept of HTTP request handling, angular services and child-to-parent comms.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
