@@ -12,6 +12,7 @@ export class WikipediaService {
   constructor(private http: HttpClient) { }
 
   search(term: string) {
+    // this returns an observable in RxJS
     return this.http.get('https://en.wikipedia.org/w/api.php', {
       params: {
         action: 'query',

@@ -33,6 +33,7 @@ export class AppComponent {
     console.log(this.car.color);
     console.log(results);
 
+    // calls subscribe on the observable and passes the observer
     this.wikipedia.search(term).subscribe((r: any) => {
       console.log(r);
       this.pages = r.query.search;
