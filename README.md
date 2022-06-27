@@ -6,6 +6,8 @@ Concept of DEPENDENCY INJECTION used in this project for the service and example
 
 Also concept of HTTP request handling, angular services and child-to-parent comms.
 
+RxJs is used in this project. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

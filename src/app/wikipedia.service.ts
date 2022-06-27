@@ -1,5 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { pluck } from 'rxjs/operators';
+
+interface Car {
+  color: string,
+  make: {
+    name: string,
+    year: number
+  }
+};
+
+const observable = new Observable<Car>((observer) => {
+  observer.next({
+    color: 'red',
+    make: {
+      name: 'nis',
+      year: 2003
+    }
+  });
+}).pipe(
+  pluck('make', 'name')
+);
+observable.subscribe((value) => {
+  console.log(value);
+})
+
+export interface WikipediaResponse {
+  query: {
+    search: {
+      title: string,
+      snippet: string,
+      pageid: number,
+      wordcount: number
+    }[]
+  }
+};
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +49,8 @@ export class WikipediaService {
 
   search(term: string) {
     // this returns an observable in RxJS
-    return this.http.get('https://en.wikipedia.org/w/api.php', {
+    // an observable is a GENERIC function
+    return this.http.get<WikipediaResponse>('https://en.wikipedia.org/w/api.php', {
       params: {
         action: 'query',
         format: 'json',
@@ -22,6 +59,8 @@ export class WikipediaService {
         srsearch: term,
         origin: '*'
       }
-    });
+    }).pipe(
+      pluck('query', 'search')
+    );
   }
 }

@@ -34,9 +34,9 @@ export class AppComponent {
     console.log(results);
 
     // calls subscribe on the observable and passes the observer
-    this.wikipedia.search(term).subscribe((r: any) => {
+    this.wikipedia.search(term).subscribe((r) => {
       console.log(r);
-      this.pages = r.query.search;
+      this.pages = r;
     });
   }
 }
